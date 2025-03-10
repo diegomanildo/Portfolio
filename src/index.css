@@ -15,3 +15,7 @@ body {
   --tertiary-color: #646e79;
   --text-color: #eee;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

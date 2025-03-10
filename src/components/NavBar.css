@@ -1,0 +1,14 @@
+@import url("../index.css");
+
+.navbar.bg-body-tertiary {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color) !important;
+}
+
+.navbar .nav-link {
+  color: var(--text-color) !important;
+}
+
+.navbar .navbar-brand {
+  color: var(--text-color) !important;
+}

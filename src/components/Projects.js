@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import Card from './layout/Card'
-import "./Proyects.css"
+import "./Project.css"
 
-class Proyects extends Component {
+class Projects extends Component {
   getLink(from, number) {
     switch (from.toLowerCase()) {
       case "adel":
         return `https://github.com/diegomanildo/Adel-Curse/blob/master/docs/imgs/${number}.png?raw=true`
       case "wordle":
         return `https://github.com/diegomanildo/Wordle/blob/master/docs/images/${number}.png?raw=true`
+      default:
+        throw new Error(`'${from}' is not valid for 'getLink()' function.`);
     }
   }
   
@@ -26,8 +28,8 @@ class Proyects extends Component {
     getImages(wordleImages, "wordle", 1);
 
     return (
-      <section className="proyects">
-        <h1 className="title glow">Proyects</h1>
+      <section className="projects">
+        <h1 className="title glow">Projects</h1>
         <div className="cards row">
           <Card className="card" link="https://github.com/diegomanildo/Adel-Curse" title="Adel's Curse" images={adelsCurseImages}>
             A game developed with <a href="https://libgdx.com/" target="_blank" rel="noreferrer">Libgdx</a> in Java with the purpose of learning about online games and AI algorithms.
@@ -47,4 +49,4 @@ class Proyects extends Component {
   }
 }
 
-export default Proyects
+export default Projects;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Route, Routes } from 'react-router-dom';
-import Menu from './components/Menu';
+import Description from './components/Description';
+import Projects from './components/Projects';
 
 import './App.css';
 
@@ -8,9 +8,8 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Routes>
-          <Route path="/" element={<Menu />} />
-        </Routes>
+        <Description />
+        <Projects />
       </main>
     )
   }

@@ -34,6 +34,7 @@ class Galery extends Component {
                 alt={`${this.props.alt} n°${idx + 1}`}
                 width={"100%"}
                 height={"250px"}
+                style={{ borderRadius: "2%" }}
               />
             </Carousel.Item>
           ))}

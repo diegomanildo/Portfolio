@@ -1,5 +1,9 @@
 @import url("../index.css");
 
+.description {
+  
+}
+
 .custom-btn {
   background: linear-gradient(135deg, var(--secondary-color), var(--tertiary-color));
   color: var(--text-color);

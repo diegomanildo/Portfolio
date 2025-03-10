@@ -1,16 +1,17 @@
+
 body {
   margin: 0;
   background: linear-gradient(135deg, var(--primary-color), #000000);
   color: var(--text-color);
   display: flex;
   justify-content: center;
-  font-size: 24px;
+  font-family: 'Onest Variable', sans-serif;
 }
 
 :root {
   color-scheme: light dark;
   --primary-color: #1e272e;
-  --secondary-color: #485460;
+  --secondary-color: #2d3436;
   --tertiary-color: #646e79;
-  --text-color: #d2dae2;
+  --text-color: #eee;
 }

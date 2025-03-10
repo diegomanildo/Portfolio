@@ -6,7 +6,7 @@ section {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  text-align: center;
+  text-align: left;
 }
 
 header {
@@ -16,13 +16,23 @@ header {
 p {
   padding-top: 10px;
   padding-bottom: 10px;
+  font-size: 24px;
 }
 
 .title {
   color: #ffffff;
   font-size: 48px;
+  padding-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 36px;
 }
 
 .glow {
   text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 5px #fff, 0 0 1px #fff;
+}
+
+.glow-dark {
+  text-shadow: 0 0 1px #444, 0 0 1px #444, 0 0 5px #444, 0 0 1px #444;
 }

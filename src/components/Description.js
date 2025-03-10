@@ -4,8 +4,7 @@ import "./Description.css";
 class Description extends Component {
   handleDownload() {
     const link = document.createElement("a");
-    link.href =
-      "https://drive.usercontent.google.com/u/0/uc?id=1I3qPWgUeiL2uqDuIB3vBETkwp51PUXBi&export=download";
+    link.href = "https://drive.usercontent.google.com/u/0/uc?id=1I3qPWgUeiL2uqDuIB3vBETkwp51PUXBi&export=download";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

@@ -1,0 +1,15 @@
+@import url("../../index.css");
+
+.card {
+  width: 500px;
+  height: 700px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.description {
+  width: 100%;
+  text-align: left;
+  padding: 0;
+}

@@ -1,19 +1,40 @@
+:root {
+  --primary-color: #1e272e;
+  --secondary-color: #2d3436;
+  --tertiary-color: #646e79;
+  --bg-color: #000000;
+  --text-color: #eee;
+
+  --primary-light: #d2dae2;
+  --secondary-light: #808e9b;
+  --tertiary-light: #b0b0b0;
+  --bg-light: #ffffff;
+  --text-light: #1e272e;
+}
+
+body.dark-theme {
+  --primary-color: #1e272e;
+  --secondary-color: #2d3436;
+  --tertiary-color: #646e79;
+  --bg-color: #000000;
+  --text-color: #eee;
+}
+
+body.light-theme {
+  --primary-color: #d2dae2;
+  --secondary-color: #808e9b;
+  --tertiary-color: #b0b0b0;
+  --bg-color: #ffffff;
+  --text-color: #1e272e;
+}
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, var(--primary-color), #000000);
+  background: linear-gradient(135deg, var(--primary-color), var(--bg-color));
   color: var(--text-color);
   display: flex;
   justify-content: center;
   font-family: 'Onest Variable', sans-serif;
-}
-
-:root {
-  color-scheme: light dark;
-  --primary-color: #1e272e;
-  --secondary-color: #2d3436;
-  --tertiary-color: #646e79;
-  --text-color: #eee;
 }
 
 ::-webkit-scrollbar {

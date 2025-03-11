@@ -17,8 +17,12 @@ class Galery extends Component {
   };
 
   render() {
+    if (!this.props.images || this.props.images.length === 0) {
+      return <p>No images available</p>;
+    }
+
     return (
-      <div className="carousel-container">
+      <div className>
         <Carousel
           activeIndex={this.state.index}
           onSelect={this.handleSelect}
@@ -29,10 +33,9 @@ class Galery extends Component {
           {this.props.images.map((image, idx) => (
             <Carousel.Item key={idx}>
               <img
-                className="d-block carousel-img"
+                className="d-block w-100"
                 src={image}
                 alt={`${this.props.alt} n°${idx + 1}`}
-                width={"100%"}
                 height={"250px"}
                 style={{ borderRadius: "2%" }}
               />

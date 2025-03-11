@@ -31,7 +31,7 @@ const ScrollToTopButton = () => {
     <>
       <button
         onClick={scrollToTop}
-        className={`scroll-to-top-btn ${showButton ? 'show' : ''}`}
+        className={`scroll-to-top-btn ${showButton ? "show" : ""}`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

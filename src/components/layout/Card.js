@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Galery from "./Galery";
+import Gallery from "./Gallery";
 import "./Card.css";
 
 class Card extends Component {
@@ -20,7 +20,7 @@ class Card extends Component {
             </h1>
           </div>
 
-          <Galery images={images} alt={`${title} photo`} />
+          <Gallery images={images} alt={`${title} photo`} />
         </div>
 
         <div className="card-body text-center">

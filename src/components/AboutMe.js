@@ -25,8 +25,24 @@ class AboutMe extends Component {
           About me
         </h1>
 
-        <p className="text-center">
+        <h1 className="subtitle left">
+          Info
+        </h1>
+
+        <p className="left">
           My name is Diego Manildo. I started programming when I was 14 years old, building small cmd applications.
+        </p>
+
+        <h1 className="subtitle left">
+          Studies
+        </h1>
+
+        <p className="left">
+          
+        </p>
+
+        <p>
+          
         </p>
       </section>
     );

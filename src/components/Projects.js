@@ -25,7 +25,7 @@ class Projects extends Component {
     getImages(adelsCurseImages, "adel", 5);
 
     const wordleImages = [];
-    getImages(wordleImages, "wordle", 1);
+    getImages(wordleImages, "wordle", 3);
 
     return (
       <section className="projects" id="projects">
@@ -113,7 +113,7 @@ class Projects extends Component {
             </a>{" "}
             for the messages displayed in the screen. <br />I understood how the
             DOM works and how to add elements changing its style, colors and
-            font
+            font.
           </Card>
         </div>
       </section>

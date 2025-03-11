@@ -1,9 +1,9 @@
 .card {
-  width: 500px;
+  width: 500px !important;
   height: 700px;
   text-align: center;
   background: linear-gradient(160deg, var(--secondary-color), var(--primary-color));
-  color: var(--text-color);
+  color: var(--text-color) !important;
   border-radius: 2.5%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }

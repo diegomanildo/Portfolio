@@ -5,21 +5,28 @@ import Projects from './components/Projects';
 import AboutMe from './components/AboutMe';
 import NavBar from './components/layout/NavBar';
 import Footer from './components/layout/Footer';
+import Skills from './components/Skills';
+import { motion } from "framer-motion";
 
 import './App.css';
-import Skills from './components/Skills';
 
 class App extends Component {
   render() {
     return (
       <main>
-        <NavBar />
-        <ScrollToTopButton />
-        <Description />
-        <Projects />
-        <Skills />
-        <AboutMe />
-        <Footer />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
+          <NavBar />
+          <ScrollToTopButton />
+          <Description />
+          <Projects />
+          <Skills />
+          <AboutMe />
+          <Footer />
+        </motion.div>
       </main>
     )
   }

@@ -17,7 +17,7 @@ class Card extends Component {
           <div>
             <h1 className="subtitle">
               {title}
-              </h1>
+            </h1>
           </div>
 
           <Galery images={images} alt={`${title} photo`} />

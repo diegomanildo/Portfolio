@@ -7,6 +7,7 @@ import NavBar from './components/layout/NavBar';
 import Footer from './components/layout/Footer';
 
 import './App.css';
+import Skills from './components/Skills';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         <ScrollToTopButton />
         <Description />
         <Projects />
+        <Skills />
         <AboutMe />
         <Footer />
       </main>

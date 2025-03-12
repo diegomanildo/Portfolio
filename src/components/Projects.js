@@ -4,11 +4,13 @@ import "./Projects.css";
 
 class Projects extends Component {
   getLink(from, number) {
-    switch (from.toLowerCase()) {
+    switch (from) {
       case "adel":
         return `https://github.com/diegomanildo/Adel-Curse/blob/master/docs/imgs/${number}.png?raw=true`;
       case "wordle":
         return `https://github.com/diegomanildo/Wordle/blob/master/docs/images/${number}.png?raw=true`;
+      case "ticTaeToe":
+        return `https://github.com/diegomanildo/TicTacToe/blob/main/docs/images/${number}.png?raw=true`;
       default:
         throw new Error(`'${from}' is not valid for 'getLink()' function.`);
     }
@@ -26,6 +28,9 @@ class Projects extends Component {
 
     const wordleImages = [];
     getImages(wordleImages, "wordle", 3);
+
+    const ticTaeToeImages = [];
+    getImages(ticTaeToeImages, "ticTaeToe", 3);
 
     return (
       <section className="projects" id="projects">
@@ -114,6 +119,16 @@ class Projects extends Component {
             for the messages displayed in the screen. <br />I understood how the
             DOM works and how to add elements changing its style, colors and
             font.
+          </Card>
+
+          <Card
+            className="card"
+            code="https://github.com/diegomanildo/TicTacToe"
+            play="https://diegomanildo.github.io/TicTacToe/"
+            title="TicTacToe"
+            images={ticTaeToeImages}
+          >
+            Tic Tac Toe game developed with Vite + React with the pupose of learning React and how hooks works.
           </Card>
         </div>
       </section>

@@ -1,6 +1,7 @@
 .cards {
   justify-content: center;
   gap: 40px;
+  max-width: 1040px; /* two cards width */
 }
 
 .card {

@@ -12,7 +12,7 @@ class Description extends Component {
 
   render() {
     return (
-      <section className="description">
+      <section id="home" className="description">
         <header>
           <a href="https://www.linkedin.com/in/diego-manildo-560b03239/" target="_blank" rel="noreferrer">
             <img

@@ -48,7 +48,7 @@ export default class NavBar extends Component {
         }`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="#home">
             <img width={40} src={logo} alt="Website Logo" className="webLogo" />
           </a>
           <button
@@ -65,7 +65,7 @@ export default class NavBar extends Component {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="#home">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
@@ -172,7 +172,7 @@ export default class NavBar extends Component {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  href="#"
+                  href="#home"
                   onClick={this.toggleTheme}
                 >
                   {this.state.theme === "dark-theme" ? (

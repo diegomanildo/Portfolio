@@ -5,6 +5,8 @@ import "./Projects.css";
 class Projects extends Component {
   getLink(from, number) {
     switch (from) {
+      case "shoppingCart":
+        return `https://github.com/diegomanildo/Shopping-Cart/blob/main/docs/images/${number}.png?raw=true`;
       case "adel":
         return `https://github.com/diegomanildo/Adel-Curse/blob/master/docs/imgs/${number}.png?raw=true`;
       case "wordle":
@@ -22,6 +24,9 @@ class Projects extends Component {
         arr.push(this.getLink(from, i));
       }
     };
+
+    const shoppingCartImages = [];
+    getImages(shoppingCartImages, "shoppingCart", 2);
 
     const adelsCurseImages = [];
     getImages(adelsCurseImages, "adel", 5);
@@ -53,6 +58,18 @@ class Projects extends Component {
           Projects
         </h1>
         <div className="cards row">
+          <Card
+            className="card"
+            code="https://github.com/diegomanildo/Shopping-Cart"
+            web="https://diegomanildo.github.io/Shopping-Cart/"
+            title="Shopping Cart"
+            images={shoppingCartImages}
+          >
+            A website made with the pupose of learning more about React. <br />
+            I learned how <i>useEffect, useState and useReducer</i> works.
+
+          </Card>
+
           <Card
             className="card"
             code="https://github.com/diegomanildo/Adel-Curse"
@@ -107,7 +124,7 @@ class Projects extends Component {
           <Card
             className="card"
             code="https://github.com/diegomanildo/Wordle"
-            play="https://diegomanildo.github.io/Wordle/"
+            web="https://diegomanildo.github.io/Wordle/"
             title="Wordle"
             images={wordleImages}
           >
@@ -124,11 +141,11 @@ class Projects extends Component {
           <Card
             className="card"
             code="https://github.com/diegomanildo/TicTacToe"
-            play="https://diegomanildo.github.io/TicTacToe/"
+            web="https://diegomanildo.github.io/TicTacToe/"
             title="TicTacToe"
             images={ticTaeToeImages}
           >
-            Tic Tac Toe game developed with Vite + React with the pupose of learning React and how hooks works.
+            Tic Tac Toe game developed with Vite + React.
           </Card>
         </div>
       </section>

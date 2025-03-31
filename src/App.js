@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ScrollToTopButton from './components/layout/ScrollToTopButton';
 import Description from './components/Description';
 import Projects from './components/Projects';
-// import AboutMe from './components/AboutMe';
+import AboutMe from './components/AboutMe';
 import NavBar from './components/layout/NavBar';
 import Footer from './components/layout/Footer';
 import Skills from './components/Skills';
@@ -20,12 +20,12 @@ class App extends Component {
           transition={{ duration: 2 }}
         >
           <NavBar />
-          <ScrollToTopButton />
           <Description />
           <Projects />
           <Skills />
-          {/* <AboutMe /> */}
+          <AboutMe />
           <Footer />
+          <ScrollToTopButton />
         </motion.div>
       </main>
     )

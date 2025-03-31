@@ -5,7 +5,7 @@ import "./Card.css";
 
 class Card extends Component {
   render() {
-    const { title, code, play, images } = this.props;
+    const { title, code, play, web, images } = this.props;
 
     return (
       <div className="card">
@@ -15,9 +15,7 @@ class Card extends Component {
           data-bs-ride="carousel"
         >
           <div>
-            <h1 className="subtitle">
-              {title}
-            </h1>
+            <h1 className="subtitle">{title}</h1>
           </div>
 
           {images && <Gallery images={images} alt={`${title} photo`} />}
@@ -27,7 +25,7 @@ class Card extends Component {
           <p className="card-text description">{this.props.children}</p>
         </div>
 
-        {(play || code) && (
+        {(play || code || web) && (
           <footer>
             {code && (
               <a href={code} target="_blank" rel="noreferrer">
@@ -76,6 +74,37 @@ class Card extends Component {
                 </button>
               </a>
             )}
+
+            {web && (
+              <a href={web} target="_blank" rel="noreferrer">
+                <button className="custom-btn notransform extend">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="2 2 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-world-www"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4" />
+                    <path d="M11.5 3a16.989 16.989 0 0 0 -1.826 4" />
+                    <path d="M12.5 3a16.989 16.989 0 0 1 1.828 4" />
+                    <path d="M19.5 17a9 9 0 0 1 -7.5 4a8.991 8.991 0 0 1 -7.484 -4" />
+                    <path d="M11.5 21a16.989 16.989 0 0 1 -1.826 -4" />
+                    <path d="M12.5 21a16.989 16.989 0 0 0 1.828 -4" />
+                    <path d="M2 10l1 4l1.5 -4l1.5 4l1 -4" />
+                    <path d="M17 10l1 4l1.5 -4l1.5 4l1 -4" />
+                    <path d="M9.5 10l1 4l1.5 -4l1.5 4l1 -4" />
+                  </svg>
+                  <b>Website</b>
+                </button>
+              </a>
+            )}
           </footer>
         )}
       </div>
@@ -87,6 +116,7 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   code: PropTypes.string.isRequired,
   play: PropTypes.string.isRequired,
+  web: PropTypes.string.isRequired,
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
   children: PropTypes.string.isRequired,
 };

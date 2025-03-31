@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "./AboutMe.css"
+import "./AboutMe.css";
+import Study from "./layout/Study";
 
 class AboutMe extends Component {
   render() {
@@ -25,24 +26,51 @@ class AboutMe extends Component {
           About me
         </h1>
 
-        <h1 className="subtitle left">
-          Info
-        </h1>
+        <h1 className="subtitle left">Info</h1>
 
         <p className="left">
-          My name is Diego Manildo. I started programming when I was 14 years old, building small cmd applications.
+          My name is Diego Manildo. I started programming when I was 14 years old, building small command-line applications in C++. <br />
+          As I grew older, I began learning C# and even attempted to create my own programming language called &quot;Rub&quot;. It was a disaster, but I learned a lot from the experience. <br />
+          After that, I completed my secondary education and started taking courses that interested me.
         </p>
 
-        <h1 className="subtitle left">
-          Studies
-        </h1>
+        <h1 className="subtitle left">Studies</h1>
 
         <p className="left">
-          
-        </p>
-
-        <p>
-          
+          <ul>
+            <li>
+              <Study
+                title="Foundational C# with Microsoft"
+                institution="freeCodeCamp"
+                src="https://www.freecodecamp.org/certification/fcc9f8200f1-5964-4ca6-871a-d57d0b03743c/foundational-c-sharp-with-microsoft"
+                date="April 2024"
+              />
+            </li>
+            <li>
+              <Study
+                title="Backend Development and API Creation"
+                institution="Packt"
+                src="https://www.coursera.org/account/accomplishments/verify/0C3I3GUNS9YU"
+                date="March 2025"
+              />
+            </li>
+            <li>
+              <Study
+                title="Frontend Development with React"
+                institution="Packt"
+                src="https://www.coursera.org/account/accomplishments/verify/9R3CZISRAMNQ"
+                date="March 2025"
+              />
+            </li>
+            <li>
+              <Study
+                title="MERN Stack Front To Back: Full Stack React, Redux & Node.js"
+                institution="Packt"
+                src="https://www.coursera.org/account/accomplishments/specialization/M0RCRCUOSLFX"
+                date="March 2025"
+              />
+            </li>
+          </ul>
         </p>
       </section>
     );

@@ -25,7 +25,7 @@ body.light-theme {
   --secondary-color: #808e9b;
   --tertiary-color: #b0b0b0;
   --bg-color: #ffffff;
-  --text-color: #1e272e;
+  --text-color: #000;
 }
 
 body {

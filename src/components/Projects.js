@@ -5,8 +5,8 @@ import "./Projects.css";
 class Projects extends Component {
   getLink(from, number) {
     switch (from) {
-      case "shoppingCart":
-        return `https://github.com/diegomanildo/Shopping-Cart/blob/main/docs/images/${number}.png?raw=true`;
+      case "pokedex":
+        return `https://github.com/diegomanildo/Pokedex/blob/main/docs/images/${number}.png?raw=true`;
       case "adel":
         return `https://github.com/diegomanildo/Adel-Curse/blob/master/docs/imgs/${number}.png?raw=true`;
       case "wordle":
@@ -25,8 +25,8 @@ class Projects extends Component {
       }
     };
 
-    const shoppingCartImages = [];
-    getImages(shoppingCartImages, "shoppingCart", 2);
+    const pokedexImages = [];
+    getImages(pokedexImages, "pokedex", 3);
 
     const adelsCurseImages = [];
     getImages(adelsCurseImages, "adel", 5);
@@ -60,13 +60,14 @@ class Projects extends Component {
         <div className="cards row">
           <Card
             className="card"
-            code="https://github.com/diegomanildo/Shopping-Cart"
-            web="https://diegomanildo.github.io/Shopping-Cart/"
-            title="Shopping Cart"
-            images={shoppingCartImages}
+            code="https://github.com/diegomanildo/Pokedex"
+            web="https://diegomanildo.github.io/Pokedex/"
+            title="Pokedex"
+            images={pokedexImages}
           >
             A website made with the pupose of learning more about React. <br />
             I learned how <i>useEffect, useState and useReducer</i> works.
+            Other things I have learned are how to interact with api&apos;s using <i>fetch, axios, etc</i>
 
           </Card>
 

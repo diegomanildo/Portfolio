@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diego Manildo — Desarrollador full-stack</title>
+<meta name="description" content="Desarrollador full-stack con foco en backend. Aplicaciones de escritorio y web de punta a punta: base de datos, API e interfaz.">
+<meta name="theme-color" content="#09090B">
+<meta property="og:title" content="Diego Manildo — Desarrollador full-stack">
+<meta property="og:description" content="Desarrollador full-stack con foco en backend. Aplicaciones de escritorio y web de punta a punta.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/assets/diego.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#09090B}
+a{color:#EDEDEF;text-decoration:none}a:hover{color:#FFFFFF}
+.pf *,.pf *::before,.pf *::after{box-sizing:border-box}
+.pf ::selection{background:#A78BFA;color:#09090B}
+@keyframes blink{50%{opacity:0}}
+@keyframes ping{0%{transform:scale(1);opacity:.75}80%,100%{transform:scale(2.6);opacity:0}}
+.cursor{animation:blink 1.1s steps(1) infinite}
+.ping{animation:ping 1.8s cubic-bezier(0,0,.2,1) infinite}
+.dots{background-image:radial-gradient(circle at 1px 1px,#26262C 1px,transparent 0);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 25%,#000 25%,transparent 100%);mask-image:radial-gradient(ellipse 75% 65% at 50% 25%,#000 25%,transparent 100%)}
+.navlink{color:#A1A1AA;transition:color .15s}.navlink:hover{color:#FFFFFF}
+.btn{transition:transform .15s,background-color .15s,border-color .15s,filter .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-solid:hover{filter:brightness(1.08)}
+.btn-ghost:hover{border-color:#52525B;background-color:#18181B}
+.card{transition:border-color .2s,transform .2s,background-color .2s}
+.card:hover{border-color:#3F3F46;transform:translateY(-3px)}
+.tlink{color:#D4D4D8;transition:color .15s}.tlink:hover{color:#FFFFFF}
+.row-link{transition:background-color .15s}.row-link:hover{background-color:#121215}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:64px;align-items:start}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.feat{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.proj-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.span2{grid-column:span 2}
+.stack-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.edu-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:end}
+@media (max-width:900px){
+.hero-grid,.feat,.two,.edu-grid,.sec-head{grid-template-columns:minmax(0,1fr);gap:32px}
+.proj-grid{grid-template-columns:minmax(0,1fr)}
+.span2{grid-column:auto}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stack-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.navlinks{display:none !important}
+}
+@media (max-width:560px){
+.stack-grid{grid-template-columns:minmax(0,1fr)}
+.hide-sm{display:none !important}
+}
+</style>
+</head>
+<body>
+<div class="pf" id="top" style="font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; background: #09090B; color: #EDEDEF; -webkit-font-smoothing: antialiased; min-height: 100vh">
+
+<!-- ============ NAV ============ -->
+<header style="position: sticky; top: 0; z-index: 30; background: rgba(9,9,11,0.74); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #1C1C20">
+<nav aria-label="Principal" style="max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; color: #EDEDEF">
+<span style="width: 32px; height: 32px; border-radius: 9px; border: 1px solid #2A2A30; background: #111114; display: inline-flex; align-items: center; justify-content: center; font: 600 12px/1 'Geist Mono', monospace; color: #A78BFA">DM</span>
+<span class="hide-sm" style="font: 500 14px/1 'Geist Mono', monospace; letter-spacing: -0.01em">diego<span style="color: #71717A">.</span>manildo</span>
+</a>
+<div class="navlinks" style="display: flex; gap: 32px; font-size: 14px">
+<a class="navlink" href="#trabajos">Trabajos</a>
+<a class="navlink" href="#proyectos">Proyectos</a>
+<a class="navlink" href="#stack">Stack</a>
+<a class="navlink" href="#formacion">Formación</a>
+<a class="navlink" href="#contacto">Contacto</a>
+</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<a class="btn btn-ghost" href="https://github.com/diegomanildo" aria-label="GitHub de Diego Manildo" style="width: 44px; height: 44px; border-radius: 11px; border: 1px solid #27272A; display: inline-flex; align-items: center; justify-content: center; color: #D4D4D8">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+</a>
+<a class="btn btn-ghost" href="https://www.linkedin.com/in/diego-manildo-560b03239/" aria-label="LinkedIn de Diego Manildo" style="width: 44px; height: 44px; border-radius: 11px; border: 1px solid #27272A; display: inline-flex; align-items: center; justify-content: center; color: #D4D4D8">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+</a>
+<a class="btn btn-solid" href="#contacto" style="height: 44px; padding: 0 18px; border-radius: 11px; background: #A78BFA; color: #09090B; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px">Contactar</a>
+</div>
+</nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section style="position: relative; overflow: hidden; border-bottom: 1px solid #1C1C20">
+<div class="dots" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none"></div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 88px 24px 104px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+<img src="/assets/diego.jpg" alt="Foto de Diego Manildo" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 1px solid #2A2A30">
+<div style="display: flex; flex-direction: column; gap: 5px">
+<span style="font-weight: 600; font-size: 15px">Diego Manildo</span>
+<span style="font: 400 13px/1.2 'Geist Mono', monospace; color: #8B8B94">@diegomanildo · Argentina</span>
+</div>
+<span style="display: inline-flex; align-items: center; gap: 10px; height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid #1E3A28; background: #0C1911; color: #86EFAC; font: 500 12.5px/1 'Geist Mono', monospace">
+<span style="position: relative; width: 8px; height: 8px; display: inline-block"><span class="ping" style="position: absolute; inset: 0; border-radius: 50%; background: #4ADE80"></span><span style="position: absolute; inset: 0; border-radius: 50%; background: #4ADE80"></span></span>
+Disponible para trabajar
+</span>
+</div>
+
+<h1 style="margin: 44px 0 0; font-size: clamp(46px, 7.2vw, 108px); line-height: 0.98; letter-spacing: -0.052em; font-weight: 600">
+<span style="display: block">Construyo software</span>
+<span style="display: block; color: #8B8B94">que la gente usa</span>
+<span style="display: block; color: #A78BFA">todos los días.</span>
+</h1>
+
+<div class="hero-grid" style="margin-top: 64px">
+
+<div style="display: flex; flex-direction: column; gap: 36px; padding-top: 4px">
+<p style="margin: 0; font-size: 19px; line-height: 1.62; color: #A1A1AA; max-width: 34em">Desarrollador <strong style="color: #EDEDEF; font-weight: 500">full-stack con foco en backend</strong>. Diseño y entrego aplicaciones de escritorio y web de punta a punta —base de datos, API e interfaz— para negocios reales. Técnico en Computación y estudiante de último año de la <strong style="color: #EDEDEF; font-weight: 500">Tecnicatura en Programación en la UTN</strong>.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn btn-solid" href="#trabajos" style="height: 48px; padding: 0 22px; border-radius: 12px; background: #A78BFA; color: #09090B; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 10px">Ver mis trabajos
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+</a>
+<a class="btn btn-ghost" href="https://github.com/diegomanildo" style="height: 48px; padding: 0 20px; border-radius: 12px; border: 1px solid #2A2A30; color: #EDEDEF; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 10px">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+GitHub</a>
+<a class="btn btn-ghost" href="https://www.linkedin.com/in/diego-manildo-560b03239/" style="height: 48px; padding: 0 20px; border-radius: 12px; border: 1px solid #2A2A30; color: #EDEDEF; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 10px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+LinkedIn</a>
+</div>
+<dl style="margin: 0; display: flex; flex-direction: column; border-top: 1px solid #1F1F23">
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #1F1F23">
+<dt style="font: 500 12.5px/1.4 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">Foco</dt>
+<dd style="margin: 0; font-size: 15px; color: #E4E4E7; text-align: right">Backend · APIs REST · Apps de escritorio</dd>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #1F1F23">
+<dt style="font: 500 12.5px/1.4 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">Hoy</dt>
+<dd style="margin: 0; font-size: 15px; color: #E4E4E7; text-align: right">UTN · último año de la carrera</dd>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #1F1F23">
+<dt style="font: 500 12.5px/1.4 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">Idiomas</dt>
+<dd style="margin: 0; font-size: 15px; color: #E4E4E7; text-align: right">Español nativo · Inglés B2</dd>
+</div>
+</dl>
+</div>
+
+<!-- code window -->
+<div style="border: 1px solid #26262C; border-radius: 16px; background: #0F0F12; overflow: hidden; box-shadow: 0 40px 90px -30px rgba(0,0,0,0.75)">
+<div style="height: 46px; display: flex; align-items: stretch; background: #0B0B0E; border-bottom: 1px solid #1F1F23">
+<div style="display: flex; align-items: center; gap: 7px; padding: 0 16px">
+<span style="width: 11px; height: 11px; border-radius: 50%; background: #2E2E35"></span>
+<span style="width: 11px; height: 11px; border-radius: 50%; background: #2E2E35"></span>
+<span style="width: 11px; height: 11px; border-radius: 50%; background: #2E2E35"></span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 0 18px; background: #0F0F12; border-left: 1px solid #1F1F23; border-right: 1px solid #1F1F23; box-shadow: inset 0 1.5px 0 #A78BFA; font: 500 12.5px/1 'Geist Mono', monospace; color: #EDEDEF">
+<span style="width: 8px; height: 8px; border-radius: 2px; background: #F1E05A"></span>perfil.js</div>
+<div class="hide-sm" style="display: flex; align-items: center; gap: 8px; padding: 0 18px; border-right: 1px solid #1F1F23; font: 500 12.5px/1 'Geist Mono', monospace; color: #8B8B94">
+<span style="width: 8px; height: 8px; border-radius: 2px; background: #B07219"></span>Api.java</div>
+</div>
+<div style="padding: 22px 0; overflow-x: auto; font: 400 13.5px/1.85 'Geist Mono', ui-monospace, monospace; color: #D4D4D8">
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">1</span><span style="white-space: pre; color: #85858F">// perfil.js</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">2</span><span style="white-space: pre"><span style="color: #A78BFA">const</span> <span style="color: #93C5FD">diego</span> = {</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">3</span><span style="white-space: pre">  rol: <span style="color: #86EFAC">"Desarrollador full-stack"</span>,</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">4</span><span style="white-space: pre">  foco: [<span style="color: #86EFAC">"backend"</span>, <span style="color: #86EFAC">"APIs REST"</span>, <span style="color: #86EFAC">"desktop"</span>],</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">5</span><span style="white-space: pre">  stack: [<span style="color: #86EFAC">"React"</span>, <span style="color: #86EFAC">"Node"</span>, <span style="color: #86EFAC">"Spring"</span>, <span style="color: #86EFAC">".NET"</span>],</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">6</span><span style="white-space: pre">  estudios: {</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">7</span><span style="white-space: pre">    utn: <span style="color: #86EFAC">"Tec. en Programación"</span>,</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">8</span><span style="white-space: pre">    progreso: <span style="color: #FDBA74">0.75</span>,</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">9</span><span style="white-space: pre">  },</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">10</span><span style="white-space: pre">  clientes: <span style="color: #FDBA74">3</span>,</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">11</span><span style="white-space: pre">  idiomas: { es: <span style="color: #86EFAC">"nativo"</span>, en: <span style="color: #86EFAC">"B2"</span> },</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">12</span><span style="white-space: pre">  disponible: <span style="color: #FDBA74">true</span>,</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">13</span><span style="white-space: pre">};</span></div>
+<div style="display: flex"><span style="width: 56px; padding-right: 22px; text-align: right; color: #5A5A63; flex: none; user-select: none">14</span><span style="white-space: pre"> </span></div>
+<div style="display: flex; background: #141418"><span style="width: 56px; padding-right: 22px; text-align: right; color: #A1A1AA; flex: none; user-select: none">15</span><span style="white-space: pre"><span style="color: #A78BFA">export default</span> <span style="color: #93C5FD">diego</span>;<span class="cursor" style="display: inline-block; width: 8px; height: 17px; background: #A78BFA; vertical-align: -3px; margin-left: 3px"></span></span></div>
+</div>
+<div style="height: 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 16px; background: #0B0B0E; border-top: 1px solid #1F1F23; font: 400 11.5px/1 'Geist Mono', monospace; color: #8B8B94">
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="6" y1="3" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>main</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; color: #86EFAC"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>0 problemas</span>
+</div>
+<div style="display: flex; align-items: center; gap: 16px">
+<span class="hide-sm">UTF-8</span>
+<span>JavaScript</span>
+<span class="hide-sm">Ln 15, Col 22</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section style="border-bottom: 1px solid #1C1C20">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px">
+<div class="stats" style="gap: 1px; background: #1C1C20; border-left: 1px solid #1C1C20; border-right: 1px solid #1C1C20">
+<div style="background: #09090B; padding: 36px 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.08em">Clientes</span>
+<span style="font-size: 52px; font-weight: 600; letter-spacing: -0.045em; line-height: 1">3</span>
+<span style="font-size: 14px; color: #A1A1AA; line-height: 1.5">apps de escritorio entregadas a clientes en 2026</span>
+</div>
+<div style="background: #09090B; padding: 36px 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.08em">Open source</span>
+<span style="font-size: 52px; font-weight: 600; letter-spacing: -0.045em; line-height: 1">16</span>
+<span style="font-size: 14px; color: #A1A1AA; line-height: 1.5">repositorios públicos en GitHub</span>
+</div>
+<div style="background: #09090B; padding: 36px 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.08em">Lenguajes</span>
+<span style="font-size: 52px; font-weight: 600; letter-spacing: -0.045em; line-height: 1">7</span>
+<span style="font-size: 14px; color: #A1A1AA; line-height: 1.5">de Assembly y C++ a Java, C# y JavaScript</span>
+</div>
+<div style="background: #09090B; padding: 36px 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.08em">UTN</span>
+<span style="font-size: 52px; font-weight: 600; letter-spacing: -0.045em; line-height: 1">75<span style="color: #A78BFA">%</span></span>
+<span style="font-size: 14px; color: #A1A1AA; line-height: 1.5">de la Tecnicatura en Programación aprobada</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ EXPERIENCIA ============ -->
+<section id="trabajos" style="scroll-margin-top: 72px">
+<div style="max-width: 1200px; margin: 0 auto; padding: 120px 24px 120px">
+<div class="sec-head">
+<div>
+<div style="font: 500 13px/1 'Geist Mono', monospace; color: #8B8B94; letter-spacing: 0.04em"><span style="color: #A78BFA">01</span> / Experiencia</div>
+<h2 style="margin: 22px 0 0; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.045em; font-weight: 600">Software a medida para negocios reales.</h2>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #A1A1AA; max-width: 32em">En 2026 desarrollé y entregué tres aplicaciones de escritorio para clientes, de punta a punta: modelo de datos, backend e interfaz. Software que hoy se usa para vender, facturar y administrar.</p>
+</div>
+
+<!-- featured: Punta en Blanko -->
+<article class="card" style="margin-top: 56px; border: 1px solid #232328; border-radius: 22px; background: #0E0E11; padding: clamp(24px, 3.4vw, 44px)">
+<div class="feat">
+<div style="display: flex; flex-direction: column; gap: 28px; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font: 500 12px/1 'Geist Mono', monospace">
+<span style="height: 28px; padding: 0 12px; border-radius: 999px; display: inline-flex; align-items: center; background: #A78BFA; color: #09090B; font-weight: 600">Destacado</span>
+<span style="height: 28px; padding: 0 12px; border-radius: 999px; display: inline-flex; align-items: center; border: 1px solid #2A2A30; color: #C4C4CC">2026</span>
+<span style="height: 28px; padding: 0 12px; border-radius: 999px; display: inline-flex; align-items: center; border: 1px solid #2A2A30; color: #C4C4CC">Cliente</span>
+<span style="height: 28px; padding: 0 12px; border-radius: 999px; display: inline-flex; align-items: center; border: 1px solid #2A2A30; color: #C4C4CC">Windows</span>
+<span style="height: 28px; padding: 0 12px; border-radius: 999px; display: inline-flex; align-items: center; border: 1px solid #2A2A30; color: #C4C4CC">v1.0.6</span>
+</div>
+<div>
+<h3 style="margin: 0; font-size: clamp(30px, 3.2vw, 40px); letter-spacing: -0.035em; font-weight: 600; line-height: 1.05">Punta en Blanko</h3>
+<p style="margin: 14px 0 0; font-size: 17px; line-height: 1.62; color: #A1A1AA">Sistema de punto de venta para comercios, 100% offline. Registra ventas, controla stock, arma presupuestos y lleva la facturación. Se instala como cualquier programa de Windows, sin dependencias externas.</p>
+</div>
+<ul class="two" style="list-style: none; margin: 0; padding: 0; gap: 14px 24px">
+<li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: #D4D4D8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Ventas con pago en efectivo, transferencia o mixto</li>
+<li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: #D4D4D8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Alertas de stock bajo en la pantalla principal</li>
+<li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: #D4D4D8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Presupuestos que pasan a venta con chequeo de stock</li>
+<li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: #D4D4D8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Clientes con validación de CUIT, teléfono y mail</li>
+<li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: #D4D4D8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Reportes diarios y mensuales con gráficos y top de ventas</li>
+<li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: #D4D4D8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>Backups automáticos con retención configurable</li>
+</ul>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">React 19</span>
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">Electron</span>
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">Express 5</span>
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">SQLite</span>
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">Chart.js</span>
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">electron-builder</span>
+</div>
+<div>
+<a class="tlink" href="https://github.com/diegomanildo/PuntaEnBlanko" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; font-weight: 500">Ver el código en GitHub
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+</div>
+</div>
+
+<!-- architecture -->
+<div style="border: 1px solid #232328; border-radius: 16px; background: #09090B; padding: 22px; display: flex; flex-direction: column; min-width: 0">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 20px; font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">
+<span>Arquitectura</span><span style="color: #86EFAC">offline-first</span>
+</div>
+
+<div style="border: 1px solid #2A2A30; border-radius: 12px; background: #111114; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 9px; border: 1px solid #2A2A30; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></span>
+<div style="min-width: 0"><div style="font-weight: 600; font-size: 15px">Electron</div><div style="font: 400 12px/1.5 'Geist Mono', monospace; color: #8B8B94">ventana nativa · instalador NSIS</div></div>
+</div>
+<span style="font: 500 11px/1 'Geist Mono', monospace; color: #71717A">shell</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; height: 36px; padding-left: 33px"><span style="align-self: stretch; border-left: 1px dashed #3F3F46"></span><span style="font: 400 11.5px/1 'Geist Mono', monospace; color: #8B8B94">carga la UI</span></div>
+
+<div style="border: 1px solid #2A2A30; border-radius: 12px; background: #111114; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 9px; border: 1px solid #2A2A30; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg></span>
+<div style="min-width: 0"><div style="font-weight: 600; font-size: 15px">React 19</div><div style="font: 400 12px/1.5 'Geist Mono', monospace; color: #8B8B94">React Router · Chart.js · Bootstrap</div></div>
+</div>
+<span style="font: 500 11px/1 'Geist Mono', monospace; color: #71717A">ui</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; height: 36px; padding-left: 33px"><span style="align-self: stretch; border-left: 1px dashed #3F3F46"></span><span style="font: 400 11.5px/1 'Geist Mono', monospace; color: #8B8B94">HTTP · JSON</span></div>
+
+<div style="border: 1px solid #2A2A30; border-radius: 12px; background: #111114; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 9px; border: 1px solid #2A2A30; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg></span>
+<div style="min-width: 0"><div style="font-weight: 600; font-size: 15px">Express 5</div><div style="font: 400 12px/1.5 'Geist Mono', monospace; color: #8B8B94">/ventas /productos /presupuestos /clientes /backups</div></div>
+</div>
+<span style="font: 500 11px/1 'Geist Mono', monospace; color: #71717A">api</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; height: 36px; padding-left: 33px"><span style="align-self: stretch; border-left: 1px dashed #3F3F46"></span><span style="font: 400 11.5px/1 'Geist Mono', monospace; color: #8B8B94">sql.js</span></div>
+
+<div style="border: 1px solid #2A2A30; border-radius: 12px; background: #111114; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; align-items: center; gap: 14px; min-width: 0">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 9px; border: 1px solid #2A2A30; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg></span>
+<div style="min-width: 0"><div style="font-weight: 600; font-size: 15px">SQLite</div><div style="font: 400 12px/1.5 'Geist Mono', monospace; color: #8B8B94">base local · copias de seguridad</div></div>
+</div>
+<span style="font: 500 11px/1 'Geist Mono', monospace; color: #71717A">datos</span>
+</div>
+
+<div style="margin-top: auto; padding-top: 20px; display: flex; align-items: center; gap: 10px; font: 400 12.5px/1.5 'Geist Mono', monospace; color: #A1A1AA">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#86EFAC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+Los datos nunca salen de la PC del cliente.
+</div>
+</div>
+</div>
+</article>
+
+<!-- other clients -->
+<div class="two" style="margin-top: 16px">
+<article class="card" style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid #2A2A30; background: #111114; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg></span>
+<span style="font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">2026 · Cliente</span>
+</div>
+<div>
+<h3 style="margin: 0; font-size: 26px; letter-spacing: -0.03em; font-weight: 600">Arroyuelo &amp; Asociados</h3>
+<p style="margin: 10px 0 0; font-size: 15.5px; line-height: 1.6; color: #A1A1AA">Aplicación de escritorio para la administración de edificios: gestión de facturas, documentos y todos sus archivos asociados.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">React</span>
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">Electron</span>
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">Gestión documental</span>
+</div>
+<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #1F1F23; display: flex; align-items: center; gap: 8px; font: 400 12.5px/1.4 'Geist Mono', monospace; color: #8B8B94">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Código privado del cliente</div>
+</article>
+
+<article class="card" style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid #2A2A30; background: #111114; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"></path><path d="m21.5 21.5-1.4-1.4"></path><path d="M3.9 3.9 2.5 2.5"></path><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"></path></svg></span>
+<span style="font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">2026 · Cliente</span>
+</div>
+<div>
+<h3 style="margin: 0; font-size: 26px; letter-spacing: -0.03em; font-weight: 600">Gym Funcional Training</h3>
+<p style="margin: 10px 0 0; font-size: 15.5px; line-height: 1.6; color: #A1A1AA">Aplicación de escritorio para la administración de los socios de un gimnasio de entrenamiento funcional.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">Python</span>
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">App de escritorio</span>
+<span style="height: 28px; padding: 0 10px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 12px/1 'Geist Mono', monospace; color: #D4D4D8">Gestión de socios</span>
+</div>
+<div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #1F1F23; display: flex; align-items: center; gap: 8px; font: 400 12.5px/1.4 'Geist Mono', monospace; color: #8B8B94">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Código privado del cliente</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- ============ PROYECTOS ============ -->
+<section id="proyectos" style="scroll-margin-top: 72px; border-top: 1px solid #1C1C20">
+<div style="max-width: 1200px; margin: 0 auto; padding: 120px 24px 120px">
+<div class="sec-head">
+<div>
+<div style="font: 500 13px/1 'Geist Mono', monospace; color: #8B8B94; letter-spacing: 0.04em"><span style="color: #A78BFA">02</span> / Proyectos</div>
+<h2 style="margin: 22px 0 0; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.045em; font-weight: 600">Código abierto, en GitHub.</h2>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #A1A1AA; max-width: 32em">Tres proyectos que muestran cómo trabajo: un editor de documentos full-stack, un videojuego en red y el sistema de punto de venta que desarrollé para un cliente.</p>
+</div>
+
+<div class="proj-grid" style="margin-top: 56px">
+
+<!-- WRub -->
+<article class="card span2" style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 28px; display: flex; flex-wrap: wrap; gap: 28px; min-height: 320px">
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">
+<span>Web full-stack</span><span>2026</span>
+</div>
+<h3 style="margin: 0; font-size: 28px; letter-spacing: -0.03em; font-weight: 600; line-height: 1.15">WRub</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A1A1AA">Un Google Drive pensado para escribir: proyectos con documentos de texto enriquecido, búsqueda, imágenes redimensionables y música de fondo mientras redactás. Exportación a PDF en camino.</p>
+<div style="font: 400 12.5px/1.5 'Geist Mono', monospace; color: #C4C4CC; background: #09090B; border: 1px solid #1F1F23; border-radius: 9px; padding: 10px 12px; overflow-wrap: anywhere">API REST en capas: routes → controllers → services → repositories</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto">
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">React</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">Vite</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">Tiptap</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">Express</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">SQLite</span>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid #1F1F23">
+<span style="display: inline-flex; align-items: center; gap: 8px; font: 400 12.5px/1 'Geist Mono', monospace; color: #A1A1AA"><span style="display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #F1E05A"></span>JavaScript</span>
+<a class="tlink" href="https://github.com/diegomanildo/WRub" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 14px; font-weight: 500">Código<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+</div>
+</div>
+<div aria-hidden="true" style="flex: 1 1 280px; min-width: 0; border: 1px solid #232328; border-radius: 14px; background: #09090B; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 40px; display: flex; align-items: center; gap: 14px; padding: 0 14px; border-bottom: 1px solid #1F1F23; font: 600 12px/1 'Geist Mono', monospace; color: #8B8B94">
+<span style="color: #EDEDEF">B</span><span style="font-style: italic">I</span><span style="text-decoration: underline">U</span><span style="width: 1px; height: 14px; background: #26262C"></span><span>H1</span><span>H2</span><span style="width: 1px; height: 14px; background: #26262C"></span><span style="font-weight: 400">Geist · 16</span>
+</div>
+<div style="flex: 1; padding: 22px 24px; display: flex; flex-direction: column; gap: 10px; background: #0C0C0F">
+<div style="height: 14px; width: 58%; border-radius: 4px; background: #3F3F46"></div>
+<div style="height: 7px; width: 100%; border-radius: 4px; background: #232328; margin-top: 6px"></div>
+<div style="height: 7px; width: 94%; border-radius: 4px; background: #232328"></div>
+<div style="height: 7px; width: 82%; border-radius: 4px; background: #232328"></div>
+<div style="height: 76px; margin: 6px 0; border-radius: 9px; border: 1px dashed #34343B; display: flex; align-items: center; justify-content: center; font: 400 11px/1 'Geist Mono', monospace; color: #8B8B94">imagen · redimensionable</div>
+<div style="height: 7px; width: 97%; border-radius: 4px; background: #232328"></div>
+<div style="height: 7px; width: 66%; border-radius: 4px; background: #232328"></div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-top: 1px solid #1F1F23">
+<span style="width: 30px; height: 30px; flex: none; border-radius: 50%; background: #A78BFA; display: inline-flex; align-items: center; justify-content: center; color: #09090B"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M7 4v16l13-8z"></path></svg></span>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 7px; min-width: 0">
+<span style="font: 400 11px/1 'Geist Mono', monospace; color: #A1A1AA">Música de fondo mientras escribís</span>
+<span style="height: 3px; border-radius: 3px; background: #232328; display: block; overflow: hidden"><span style="display: block; height: 3px; width: 38%; background: #A78BFA"></span></span>
+</div>
+</div>
+</div>
+</article>
+
+<!-- Adel's Curse -->
+<article class="card" style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 28px; display: flex; flex-direction: column; gap: 16px; min-height: 320px">
+<div aria-hidden="true" style="border: 1px solid #232328; border-radius: 14px; background: #09090B; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 14px">
+<div style="align-self: stretch; display: flex; justify-content: space-between; gap: 12px; font: 400 11px/1 'Geist Mono', monospace; color: #8B8B94"><span>minimapa</span><span>procedural</span></div>
+<div style="display: grid; grid-template-columns: repeat(5, 26px); grid-auto-rows: 22px; gap: 6px">
+<span></span><span></span><span style="border-radius: 4px; background: #1C1C21; border: 1px solid #2E2E35"></span><span style="border-radius: 4px; background: #A78BFA; display: flex; align-items: center; justify-content: center; color: #09090B"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><path d="M8 20v2h8v-2"></path><path d="m12.5 17-.5-1-.5 1h1z"></path><path d="M16 20a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20"></path></svg></span><span></span>
+<span></span><span style="border-radius: 4px; background: #1C1C21; border: 1px solid #2E2E35"></span><span style="border-radius: 4px; background: #1C1C21; border: 1px solid #2E2E35"></span><span style="border-radius: 4px; background: #1C1C21; border: 1px solid #2E2E35"></span><span></span>
+<span style="border-radius: 4px; background: #1C1C21; border: 1.5px solid #A78BFA; display: flex; align-items: center; justify-content: center"><span style="width: 6px; height: 6px; border-radius: 50%; background: #A78BFA"></span></span><span style="border-radius: 4px; background: #1C1C21; border: 1px solid #2E2E35"></span><span></span><span style="border-radius: 4px; background: #1C1C21; border: 1px solid #2E2E35"></span><span style="border-radius: 4px; background: #1C1C21; border: 1px solid #2E2E35; display: flex; align-items: center; justify-content: center; font: 600 12px/1 'Geist Mono', monospace; color: #FDBA74">$</span>
+<span></span><span></span><span></span><span style="border-radius: 4px; background: #1C1C21; border: 1px solid #2E2E35"></span><span></span>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; font: 400 11px/1 'Geist Mono', monospace; color: #8B8B94">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #A78BFA"></span>inicio</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="color: #FDBA74; font-weight: 600">$</span>tienda</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 2px; background: #A78BFA"></span>jefe</span>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 4px; font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">
+<span>Videojuego</span><span>2024</span>
+</div>
+<h3 style="margin: 0; font-size: 28px; letter-spacing: -0.03em; font-weight: 600; line-height: 1.15">Adel's Curse</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A1A1AA">Juego en Java con LibGDX y partidas en red: mazmorras generadas proceduralmente, enemigos con IA, inventario, tienda y jefes finales.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto">
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">LibGDX</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">Scene2D</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">Juego en red</span>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid #1F1F23">
+<span style="display: inline-flex; align-items: center; gap: 8px; font: 400 12.5px/1 'Geist Mono', monospace; color: #A1A1AA"><span style="display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #B07219"></span>Java</span>
+<div style="display: flex; align-items: center; gap: 18px; font-size: 14px; font-weight: 500">
+<a class="tlink" href="https://github.com/diegomanildo/Adel-Curse" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px">Código<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+<a href="https://drive.google.com/file/d/1GJenYi_7_9FpGcx9PJ1d2nDGXJufDL22/view?usp=sharing" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #A78BFA">Descargar<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+</div>
+</div>
+</article>
+
+<!-- Punta en Blanko -->
+<article class="card span2" style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 28px; display: flex; flex-wrap: wrap; gap: 28px; min-height: 320px">
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">
+<span>Punto de venta · Cliente</span><span>2026</span>
+</div>
+<h3 style="margin: 0; font-size: 28px; letter-spacing: -0.03em; font-weight: 600; line-height: 1.15">Punta en Blanko</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A1A1AA">El sistema de punto de venta que desarrollé para un comercio, con el código abierto: ventas, stock, presupuestos, clientes, reportes con gráficos y backups automáticos. Funciona 100% offline y se instala como cualquier programa de Windows.</p>
+<div style="font: 400 12.5px/1.5 'Geist Mono', monospace; color: #C4C4CC; background: #09090B; border: 1px solid #1F1F23; border-radius: 9px; padding: 10px 12px; overflow-wrap: anywhere">Electron → React 19 → Express 5 → SQLite · instalador NSIS</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto">
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">React 19</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">Electron</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">Express 5</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">SQLite</span>
+<span style="height: 26px; padding: 0 9px; border-radius: 7px; display: inline-flex; align-items: center; background: #17171B; border: 1px solid #26262C; font: 500 11.5px/1 'Geist Mono', monospace; color: #D4D4D8">Chart.js</span>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid #1F1F23">
+<span style="display: inline-flex; align-items: center; gap: 8px; font: 400 12.5px/1 'Geist Mono', monospace; color: #A1A1AA"><span style="display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #F1E05A"></span>JavaScript</span>
+<div style="display: flex; align-items: center; gap: 18px; font-size: 14px; font-weight: 500">
+<a class="tlink" href="https://github.com/diegomanildo/PuntaEnBlanko" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px">Código<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+<a href="#trabajos" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #A78BFA">Ver el caso<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg></a>
+</div>
+</div>
+</div>
+<div aria-hidden="true" style="flex: 1 1 280px; min-width: 0; border: 1px solid #232328; border-radius: 14px; background: #09090B; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 14px; border-bottom: 1px solid #1F1F23; font: 400 11.5px/1 'Geist Mono', monospace; color: #8B8B94">
+<span style="display: inline-flex; align-items: center; gap: 7px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #2E2E35"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2E2E35"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2E2E35"></span></span>
+<span>Punta en Blanko · POS</span>
+</div>
+<div style="flex: 1; display: flex; min-height: 0">
+<div style="width: 122px; flex: none; padding: 12px 8px; border-right: 1px solid #1F1F23; display: flex; flex-direction: column; gap: 2px; font: 400 11.5px/1 'Geist Mono', monospace; color: #8B8B94">
+<span style="display: flex; align-items: center; gap: 7px; padding: 8px; border-radius: 6px; background: #17171B; color: #EDEDEF"><span style="width: 6px; height: 6px; border-radius: 50%; background: #A78BFA"></span>Nueva venta</span>
+<span style="padding: 8px">Productos</span>
+<span style="padding: 8px">Presupuestos</span>
+<span style="padding: 8px">Clientes</span>
+<span style="padding: 8px">Facturación</span>
+<span style="padding: 8px">Backups</span>
+</div>
+<div style="flex: 1; min-width: 0; padding: 16px; display: flex; flex-direction: column; gap: 14px; background: #0C0C0F">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span style="font: 400 11px/1 'Geist Mono', monospace; color: #A1A1AA">Facturación del mes</span>
+<span style="height: 20px; padding: 0 8px; border-radius: 999px; display: inline-flex; align-items: center; border: 1px solid #3A2A14; background: #1A130A; color: #FDBA74; font: 500 10.5px/1 'Geist Mono', monospace">stock bajo</span>
+</div>
+<div style="height: 96px; display: flex; align-items: flex-end; gap: 6px; border-bottom: 1px solid #26262C">
+<span style="flex: 1; height: 40%; border-radius: 3px 3px 0 0; background: #26262C"></span>
+<span style="flex: 1; height: 58%; border-radius: 3px 3px 0 0; background: #26262C"></span>
+<span style="flex: 1; height: 34%; border-radius: 3px 3px 0 0; background: #26262C"></span>
+<span style="flex: 1; height: 72%; border-radius: 3px 3px 0 0; background: #26262C"></span>
+<span style="flex: 1; height: 61%; border-radius: 3px 3px 0 0; background: #26262C"></span>
+<span style="flex: 1; height: 88%; border-radius: 3px 3px 0 0; background: #A78BFA"></span>
+<span style="flex: 1; height: 52%; border-radius: 3px 3px 0 0; background: #26262C"></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; gap: 12px"><span style="height: 7px; width: 48%; border-radius: 4px; background: #232328"></span><span style="height: 7px; width: 18%; border-radius: 4px; background: #2E2E35"></span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><span style="height: 7px; width: 38%; border-radius: 4px; background: #232328"></span><span style="height: 7px; width: 22%; border-radius: 4px; background: #2E2E35"></span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><span style="height: 7px; width: 54%; border-radius: 4px; background: #232328"></span><span style="height: 7px; width: 15%; border-radius: 4px; background: #2E2E35"></span></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+
+<a class="card" href="https://github.com/diegomanildo?tab=repositories" style="border: 1px dashed #2E2E35; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 320px; color: #EDEDEF">
+<span style="width: 48px; height: 48px; border-radius: 13px; border: 1px solid #2A2A30; background: #111114; display: inline-flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+</span>
+<div>
+<div style="font-size: 25px; font-weight: 600; letter-spacing: -0.03em">16 repositorios públicos</div>
+<div style="margin-top: 8px; font-size: 15px; line-height: 1.55; color: #A1A1AA">Todo el código, los commits y la evolución de cada proyecto.</div>
+</div>
+<span style="display: inline-flex; align-items: center; gap: 8px; font: 500 13px/1 'Geist Mono', monospace; color: #A78BFA">github.com/diegomanildo<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section id="stack" style="scroll-margin-top: 72px; border-top: 1px solid #1C1C20">
+<div style="max-width: 1200px; margin: 0 auto; padding: 120px 24px 120px">
+<div class="sec-head">
+<div>
+<div style="font: 500 13px/1 'Geist Mono', monospace; color: #8B8B94; letter-spacing: 0.04em"><span style="color: #A78BFA">03</span> / Stack</div>
+<h2 style="margin: 22px 0 0; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.045em; font-weight: 600">Tecnologías que uso.</h2>
+</div>
+</div>
+
+<div style="margin-top: 56px; border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: clamp(22px, 3vw, 36px)">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px">
+<span style="font-size: 17px; font-weight: 600; letter-spacing: -0.02em">Código público por lenguaje</span>
+<span style="font: 400 12.5px/1 'Geist Mono', monospace; color: #8B8B94">fuente: GitHub · ~980 KB en 16 repos</span>
+</div>
+<div style="margin-top: 22px; display: flex; gap: 3px; height: 14px; border-radius: 999px; overflow: hidden">
+<span style="width: 61.8%; background: #F1E05A"></span>
+<span style="width: 25.6%; background: #B07219"></span>
+<span style="width: 9.4%; background: #7C4DBF"></span>
+<span style="width: 2.2%; background: #A27A3C"></span>
+<span style="width: 0.6%; background: #178600"></span>
+<span style="width: 0.4%; background: #E34C26"></span>
+</div>
+<div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 14px 28px; font: 400 13px/1 'Geist Mono', monospace; color: #D4D4D8">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 9px; height: 9px; border-radius: 50%; background: #F1E05A"></span>JavaScript <span style="color: #8B8B94">61.8%</span></span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 9px; height: 9px; border-radius: 50%; background: #B07219"></span>Java <span style="color: #8B8B94">25.6%</span></span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 9px; height: 9px; border-radius: 50%; background: #7C4DBF"></span>CSS <span style="color: #8B8B94">9.4%</span></span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 9px; height: 9px; border-radius: 50%; background: #A27A3C"></span>Assembly <span style="color: #8B8B94">2.2%</span></span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 9px; height: 9px; border-radius: 50%; background: #178600"></span>C# <span style="color: #8B8B94">0.6%</span></span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 9px; height: 9px; border-radius: 50%; background: #E34C26"></span>HTML <span style="color: #8B8B94">0.5%</span></span>
+</div>
+</div>
+
+<div class="stack-grid" style="margin-top: 16px">
+<div class="card" style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 26px">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+<span style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #2A2A30; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg></span>
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">Lenguajes</h3>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; font-size: 15px; color: #D4D4D8">
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">JavaScript<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">01</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Java<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">02</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">C#<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">03</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">C++<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">04</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Python<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">05</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">SQL<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">06</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Assembly<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">07</span></li>
+</ul>
+</div>
+<div class="card" style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 26px">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+<span style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #2A2A30; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg></span>
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">Frontend</h3>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; font-size: 15px; color: #D4D4D8">
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">React<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">01</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Redux<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">02</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Angular<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">03</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Vite<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">04</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Bootstrap<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">05</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Tiptap<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">06</span></li>
+</ul>
+</div>
+<div class="card" style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 26px">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+<span style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #2A2A30; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg></span>
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">Backend</h3>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; font-size: 15px; color: #D4D4D8">
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Node.js<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">01</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Express<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">02</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Spring Boot<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">03</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">ASP.NET Core<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">04</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">JWT · Spring Security<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">05</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">APIs REST<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">06</span></li>
+</ul>
+</div>
+<div class="card" style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 26px">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+<span style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #2A2A30; display: inline-flex; align-items: center; justify-content: center; color: #A78BFA"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg></span>
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">Datos y desktop</h3>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; font-size: 15px; color: #D4D4D8">
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">MySQL<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">01</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">SQLite<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">02</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Entity Framework<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">03</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Electron<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">04</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">LibGDX<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">05</span></li>
+<li style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid #1C1C20">Git y GitHub<span style="font: 400 12px/1.6 'Geist Mono', monospace; color: #71717A">06</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ FORMACION ============ -->
+<section id="formacion" style="scroll-margin-top: 72px; border-top: 1px solid #1C1C20">
+<div style="max-width: 1200px; margin: 0 auto; padding: 120px 24px 120px">
+<div class="sec-head">
+<div>
+<div style="font: 500 13px/1 'Geist Mono', monospace; color: #8B8B94; letter-spacing: 0.04em"><span style="color: #A78BFA">04</span> / Formación</div>
+<h2 style="margin: 22px 0 0; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.045em; font-weight: 600">Formación técnica, desde el secundario.</h2>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #A1A1AA; max-width: 32em">Escuela técnica, universidad y formación continua: certificaciones en backend, frontend e ingeniería de software que aplico en cada proyecto.</p>
+</div>
+
+<div class="edu-grid" style="margin-top: 56px">
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<li style="display: flex; gap: 22px">
+<div style="display: flex; flex-direction: column; align-items: center; flex: none; width: 16px">
+<span style="width: 16px; height: 16px; flex: none; border-radius: 50%; border: 2px solid #A78BFA; background: #09090B; margin-top: 4px"></span>
+<span style="flex: 1; width: 1px; background: #26262C; margin-top: 6px"></span>
+</div>
+<div style="flex: 1; min-width: 0; padding-bottom: 44px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font: 500 12.5px/1 'Geist Mono', monospace; color: #8B8B94">2025 — hoy<span style="height: 24px; padding: 0 10px; border-radius: 999px; display: inline-flex; align-items: center; border: 1px solid #1E3A28; background: #0C1911; color: #86EFAC">En curso</span></div>
+<h3 style="margin: 14px 0 0; font-size: 24px; letter-spacing: -0.03em; font-weight: 600">Tecnicatura en Programación</h3>
+<div style="margin-top: 6px; font-size: 15.5px; color: #A1A1AA">Universidad Tecnológica Nacional (UTN)</div>
+<div style="margin-top: 20px; border: 1px solid #232328; border-radius: 14px; background: #0E0E11; padding: 18px 20px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
+<span style="font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94; text-transform: uppercase; letter-spacing: 0.06em">Avance de la carrera</span>
+<span style="font-size: 22px; font-weight: 600; letter-spacing: -0.03em; color: #A78BFA">75%</span>
+</div>
+<div style="margin-top: 14px; height: 6px; border-radius: 999px; background: #1F1F23; overflow: hidden"><div style="height: 6px; width: 75%; border-radius: 999px; background: #A78BFA"></div></div>
+<div style="margin-top: 12px; font-size: 14px; color: #A1A1AA">Cursando el último año.</div>
+</div>
+</div>
+</li>
+<li style="display: flex; gap: 22px">
+<div style="display: flex; flex-direction: column; align-items: center; flex: none; width: 16px">
+<span style="width: 16px; height: 16px; flex: none; border-radius: 50%; border: 2px solid #52525B; background: #09090B; margin-top: 4px"></span>
+<span style="flex: 1; width: 1px; background: #26262C; margin-top: 6px"></span>
+</div>
+<div style="flex: 1; min-width: 0; padding-bottom: 44px">
+<div style="font: 500 12.5px/1 'Geist Mono', monospace; color: #8B8B94">2024</div>
+<h3 style="margin: 14px 0 0; font-size: 24px; letter-spacing: -0.03em; font-weight: 600">Técnico en Computación</h3>
+<div style="margin-top: 6px; font-size: 15.5px; color: #A1A1AA">Escuela Técnica N°35 Eduardo Latzina · título secundario técnico</div>
+</div>
+</li>
+<li style="display: flex; gap: 22px">
+<div style="display: flex; flex-direction: column; align-items: center; flex: none; width: 16px">
+<span style="width: 16px; height: 16px; flex: none; border-radius: 50%; border: 2px solid #52525B; background: #09090B; margin-top: 4px"></span>
+</div>
+<div style="flex: 1; min-width: 0">
+<div style="font: 500 12.5px/1 'Geist Mono', monospace; color: #8B8B94">2023</div>
+<h3 style="margin: 14px 0 0; font-size: 24px; letter-spacing: -0.03em; font-weight: 600">Estudios superiores de inglés</h3>
+<div style="margin-top: 6px; font-size: 15.5px; color: #A1A1AA">Cambridge College · nivel B2</div>
+</div>
+</li>
+</ol>
+
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 26px 28px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">Certificaciones</h3>
+<span style="font: 500 12px/1 'Geist Mono', monospace; color: #8B8B94">2025 · 5 cursos</span>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0">
+<li style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-top: 1px solid #1C1C20"><span style="font-size: 15px; line-height: 1.45; color: #E4E4E7">Backend Development and API Creation</span><span style="flex: none; font: 400 12px/1 'Geist Mono', monospace; color: #8B8B94">Coursera</span></li>
+<li style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-top: 1px solid #1C1C20"><span style="font-size: 15px; line-height: 1.45; color: #E4E4E7">MERN Stack Front To Back: Full Stack React, Redux &amp; Node.js</span><span style="flex: none; font: 400 12px/1 'Geist Mono', monospace; color: #8B8B94">Coursera</span></li>
+<li style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-top: 1px solid #1C1C20"><span style="font-size: 15px; line-height: 1.45; color: #E4E4E7">Frontend Development with React</span><span style="flex: none; font: 400 12px/1 'Geist Mono', monospace; color: #8B8B94">Coursera</span></li>
+<li style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-top: 1px solid #1C1C20"><span style="font-size: 15px; line-height: 1.45; color: #E4E4E7">Introduction to Software Engineering</span><span style="flex: none; font: 400 12px/1 'Geist Mono', monospace; color: #8B8B94">Coursera</span></li>
+<li style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-top: 1px solid #1C1C20"><span style="font-size: 15px; line-height: 1.45; color: #E4E4E7">Foundational C# with Microsoft</span><span style="flex: none; font: 400 12px/1 'Geist Mono', monospace; color: #8B8B94">freeCodeCamp</span></li>
+</ul>
+</div>
+
+<div style="border: 1px solid #232328; border-radius: 20px; background: #0E0E11; padding: 26px 28px; display: flex; flex-direction: column; gap: 22px">
+<h3 style="margin: 0; font-size: 17px; font-weight: 600">Idiomas</h3>
+<div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="font-size: 15px; color: #E4E4E7">Español</span><span style="font: 500 12.5px/1 'Geist Mono', monospace; color: #A1A1AA">Nativo</span></div>
+<div style="margin-top: 12px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px">
+<span style="height: 6px; border-radius: 3px; background: #A78BFA"></span><span style="height: 6px; border-radius: 3px; background: #A78BFA"></span><span style="height: 6px; border-radius: 3px; background: #A78BFA"></span><span style="height: 6px; border-radius: 3px; background: #A78BFA"></span><span style="height: 6px; border-radius: 3px; background: #A78BFA"></span><span style="height: 6px; border-radius: 3px; background: #A78BFA"></span>
+</div>
+</div>
+<div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><span style="font-size: 15px; color: #E4E4E7">Inglés</span><span style="font: 500 12.5px/1 'Geist Mono', monospace; color: #A1A1AA">B2 · intermedio alto</span></div>
+<div style="margin-top: 12px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px">
+<span style="height: 6px; border-radius: 3px; background: #A78BFA"></span><span style="height: 6px; border-radius: 3px; background: #A78BFA"></span><span style="height: 6px; border-radius: 3px; background: #A78BFA"></span><span style="height: 6px; border-radius: 3px; background: #A78BFA"></span><span style="height: 6px; border-radius: 3px; background: #26262C"></span><span style="height: 6px; border-radius: 3px; background: #26262C"></span>
+</div>
+<div style="margin-top: 8px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; font: 400 11px/1 'Geist Mono', monospace; color: #71717A">
+<span>A1</span><span>A2</span><span>B1</span><span style="color: #EDEDEF">B2</span><span>C1</span><span>C2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" style="scroll-margin-top: 72px; position: relative; overflow: hidden; border-top: 1px solid #1C1C20">
+<div class="dots" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none"></div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 136px 24px 112px">
+<div style="font: 500 13px/1 'Geist Mono', monospace; color: #8B8B94; letter-spacing: 0.04em"><span style="color: #A78BFA">05</span> / Contacto</div>
+<h2 style="margin: 28px 0 0; font-size: clamp(64px, 11vw, 160px); line-height: 0.92; letter-spacing: -0.06em; font-weight: 600">Hablemos<span style="color: #A78BFA">.</span></h2>
+<p style="margin: 32px 0 0; font-size: 19px; line-height: 1.6; color: #A1A1AA; max-width: 36em">Busco sumarme a un equipo de desarrollo para seguir creciendo como backend, y sigo abierto a proyectos freelance. Si tenés algo en mente, escribime.</p>
+
+<div style="margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<a href="mailto:diegothiry26@gmail.com" style="display: inline-flex; align-items: center; gap: 14px; min-height: 64px; padding: 0 26px; border-radius: 16px; background: #EDEDEF; color: #09090B; font-size: clamp(17px, 2.2vw, 24px); font-weight: 600; letter-spacing: -0.02em; overflow-wrap: anywhere" class="btn btn-solid">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+diegothiry26@gmail.com</a>
+<button type="button" id="copy-email" class="btn btn-ghost" aria-label="Copiar email" style="min-height: 64px; padding: 0 22px; border-radius: 16px; border: 1px solid #2A2A30; background: transparent; color: #EDEDEF; font: 500 15px/1 'Geist', sans-serif; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<span data-state="idle" style="display: inline-flex; align-items: center; gap: 10px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>Copiar</span>
+<span data-state="done" hidden style="display: none; align-items: center; gap: 10px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#86EFAC" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span style="color: #86EFAC">Copiado</span></span>
+</button>
+</div>
+
+<div class="two" style="margin-top: 16px; max-width: 760px">
+<a class="card" href="https://github.com/diegomanildo" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; border: 1px solid #232328; border-radius: 16px; background: #0E0E11; color: #EDEDEF">
+<span style="display: flex; align-items: center; gap: 14px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+<span style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600; font-size: 16px">GitHub</span><span style="font: 400 12.5px/1 'Geist Mono', monospace; color: #8B8B94">@diegomanildo</span></span>
+</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+</a>
+<a class="card" href="https://www.linkedin.com/in/diego-manildo-560b03239/" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; border: 1px solid #232328; border-radius: 16px; background: #0E0E11; color: #EDEDEF">
+<span style="display: flex; align-items: center; gap: 14px">
+<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+<span style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600; font-size: 16px">LinkedIn</span><span style="font: 400 12.5px/1 'Geist Mono', monospace; color: #8B8B94">Diego Manildo</span></span>
+</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+</a>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1C1C20">
+<div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font: 400 13px/1 'Geist Mono', monospace; color: #8B8B94">
+<span>© 2026 Diego Manildo</span>
+<a class="tlink" href="#top" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px">Volver arriba
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg></a>
+</div>
+</footer>
+
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy-email");
+  if (!btn) return;
+  var idle = btn.querySelector('[data-state="idle"]');
+  var done = btn.querySelector('[data-state="done"]');
+  var timer;
+  function show(copied) {
+    idle.style.display = copied ? "none" : "inline-flex";
+    done.style.display = copied ? "inline-flex" : "none";
+    done.hidden = !copied;
+  }
+  btn.addEventListener("click", function () {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText("diegothiry26@gmail.com").then(function () {
+      show(true);
+      clearTimeout(timer);
+      timer = setTimeout(function () { show(false); }, 1800);
+    }).catch(function () {});
+  });
+})();
+</script>
+</body>
+</html>
